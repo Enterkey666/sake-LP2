@@ -76,7 +76,7 @@ export default function Home() {
     });
   };
 
-  const updateQuantity = (id, newQuantity) => {
+  const updateQuantity = (id: number, newQuantity: number) => {
     if (newQuantity <= 0) {
       setCartItems(prev => prev.filter(item => item.id !== id));
     } else {
