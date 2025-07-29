@@ -62,7 +62,7 @@ export default function Home() {
     }
   ];
 
-  const addToCart = (product) => {
+  const addToCart = (product: { id: number; name: string; price: number; image: string }) => {
     setCartItems(prev => {
       const existingItem = prev.find(item => item.id === product.id);
       if (existingItem) {
