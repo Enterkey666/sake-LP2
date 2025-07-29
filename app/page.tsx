@@ -94,7 +94,7 @@ export default function Home() {
     return cartItems.reduce((count, item) => count + item.quantity, 0);
   };
 
-  const handleSearch = (query) => {
+  const handleSearch = (query: string) => {
     if (!query.trim()) {
       setFilteredProducts([]);
       return;
