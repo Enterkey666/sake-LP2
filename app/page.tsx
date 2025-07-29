@@ -4,6 +4,14 @@
 import Link from 'next/link';
 import { useState } from 'react';
 
+type Product = {
+  id: number;
+  name: string;
+  price: number;
+  category: string;
+  image: string;
+};
+
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,13 +20,13 @@ export default function Home() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
   const [cartItems, setCartItems] = useState([
     { id: 1, name: "特選純米酒 山田錦", price: 3200, quantity: 1, image: "sake-1" },
     { id: 3, name: "クラフトビール IPA", price: 680, quantity: 2, image: "beer-1" }
   ]);
 
-  const products = [
+  const products: Product[] = [
     { id: 1, name: "特選純米酒 山田錦", price: 3200, category: "日本酒", image: "sake-1" },
     { id: 2, name: "季節限定 桜酒", price: 2800, category: "日本酒", image: "sake-2" },
     { id: 3, name: "クラフトビール IPA", price: 680, category: "ビール", image: "beer-1" },
